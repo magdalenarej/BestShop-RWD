@@ -1,36 +1,29 @@
 .opening {
-  display: flex;
+  @extend flex-align-center;
   flex-direction: column;
-  align-items: center;
   margin-top: 6.25rem;
   padding: 0 2rem;
   overflow: hidden;
 
   .opening-header{
-    font-family: $font-raleway;
-    font-size: 2.2rem;
-    font-weight: lighter;
+    @include font-set($font-raleway, 2.2rem, lighter);
     margin-bottom: 20px;
   }
 
   .opening-p {
-    font-family: $font-openSans;
-    font-size: 16px;
+    @include font-set($font-openSans, 1rem);
     text-align: center;
     margin-bottom: 2rem;
     padding: 0 4.5rem;
   }
 
   .opening-btn {
+    @include font-set($font-openSans, 1rem, bold, $color-white);
     width: 100%;
-    border: none;
-    background-color: $color-primary;
-    border-radius: 40px;
     padding: 1.3rem 0;
-    color: $color-white;
-    font-size: 1rem;
-    font-weight: bold;
-    font-family: "Open Sans", sans-serif;
+    background-color: $color-primary;
+    border: none;
+    border-radius: 40px;
     text-align: center;
 
     &:hover {
