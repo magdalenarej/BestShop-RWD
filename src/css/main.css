@@ -97,6 +97,7 @@ h1, h2, h3, h4 {
 }
 .header-menu ul .menu-item {
   padding: 0.75rem 1.25rem;
+  transition: border-bottom 0.3s ease-out;
 }
 @media only screen and (min-width: 768px) {
   .header-menu ul .menu-item {
@@ -113,6 +114,7 @@ h1, h2, h3, h4 {
   height: 100%;
   display: flex;
   align-items: center;
+  transition: color 0.3s ease-out;
 }
 .header-menu ul .menu-item a:hover {
   color: #000000;
@@ -222,12 +224,15 @@ h1, h2, h3, h4 {
   background-color: #08A6E4;
   border-radius: 40px;
   padding: 1.3rem 0;
-  box-shadow: 5px 10px 14px rgba(7, 172, 230, 0.16);
   color: #FFFFFF;
   font-size: 1rem;
   font-weight: bold;
   font-family: "Open Sans", sans-serif;
   text-align: center;
+}
+.opening .opening-btn:hover {
+  box-shadow: 5px 10px 14px rgba(7, 172, 230, 0.16);
+  cursor: pointer;
 }
 @media only screen and (min-width: 768px) {
   .opening .opening-btn {
@@ -608,6 +613,11 @@ h1, h2, h3, h4 {
   font-family: "Open Sans", sans-serif;
   font-weight: bold;
   font-size: 0.8rem;
+  transition: font-size 0.5s ease-out;
+}
+.pricing .pricing-box .pricing-btn:hover {
+  cursor: pointer;
+  font-size: 0.9rem;
 }
 .pricing .pricing-basic {
   border-color: #FB3B64;

@@ -9,3 +9,22 @@
     @content;
   }
 }
+
+@mixin hamburger-menu ($position) {
+  content: '';
+  display: block;
+  width: 20px;
+  padding: 1px 0;
+  background-color: $color-primary;
+  position: relative;
+  $position: 4px;
+  border-radius: 1px;
+  transition: 0.5s ease-out;
+}
+
+@mixin font-set ($font-family, $font-size, $font-weight, $color) {
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $color;
+}

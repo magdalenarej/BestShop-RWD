@@ -27,12 +27,17 @@
     background-color: $color-primary;
     border-radius: 40px;
     padding: 1.3rem 0;
-    box-shadow: 5px 10px 14px $color-primary-shadow;
     color: $color-white;
     font-size: 1rem;
     font-weight: bold;
     font-family: "Open Sans", sans-serif;
     text-align: center;
+
+    &:hover {
+      box-shadow: 5px 10px 14px $color-primary-shadow;
+      cursor: pointer;
+
+    }
 
     @include tablet {
       max-width: 27.5rem;

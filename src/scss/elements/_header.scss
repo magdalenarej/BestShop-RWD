@@ -11,9 +11,8 @@
   }
 
   .header-container {
-    display: flex;
+    @extend %flex-align-center;
     justify-content: space-between;
-    align-items: center;
     height: 100%;
     width: 100%;
     padding: 0 1.6rem;
@@ -31,10 +30,7 @@
     }
 
     .header-logo {
-      font-family: $font-raleway;
-      color: $color-primary;
-      font-size: 32px;
-      font-weight: lighter;
+      @include font-set($font-raleway, 2rem, lighter, $color-primary);
     }
 
   }
@@ -43,6 +39,7 @@
 
 .header-menu {
   //display: none;
+  @include font-set($font-openSans, 0.7rem, bold, $color-grey);
   position: absolute;
   top: 4.3rem;
   left: 0;
@@ -53,32 +50,26 @@
   box-shadow: 0 3px 6px #00000029;
   transition: padding-bottom 0.5s;
   z-index: -1;
-  font-family: $font-openSans;
-  color: $color-grey;
-  font-size: 11px;
-  font-weight: bold;
-
 
   @include tablet {
-    display: flex;
-    align-items: center;
+    @extend %flex-align-center;
     opacity: 1;
     position: static;
-    box-shadow: none;
     width: auto;
     height: 100%;
     z-index: 0;
+    box-shadow: none;
   }
 
   ul {
     @include tablet {
-      display: flex;
-      align-items: center;
+      @extend %flex-align-center;
       height: 100%;
     }
 
     .menu-item {
       padding: 0.75rem 1.25rem;
+      transition: border-bottom 0.3s ease-out;
 
       @include tablet {
         height: 100%;
@@ -91,10 +82,10 @@
       }
 
       a {
+        @extend %flex-align-center;
         color: $color-grey;
         height: 100%;
-        display: flex;
-        align-items: center;
+        transition: color 0.3s ease-out;
 
 
         &:hover {
@@ -126,46 +117,29 @@
 }
 
 .header-menu-icon {
+  display: flex;
   width: 1.5rem;
   height: 1.5rem;
-  display: flex;
   @include tablet {
     display: none;
   }
 
   .navicon {
+    @extend %flex-align-center;
+    flex-direction: column;
+    justify-content: center;
     width: 20px;
     height: 2px;
     background-color: $color-primary;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-self: center;
     border-radius: 1px;
     transition: 0.5s ease-out;
 
     &::before {
-      content: '';
-      display: block;
-      width: 20px;
-      padding: 1px 0;
-      background-color: $color-primary;
-      position: relative;
-      bottom: 4px;
-      border-radius: 1px;
-      transition: 0.5s ease-out;
+      @include hamburger-menu(bottom)
     }
 
     &::after {
-      content: '';
-      display: block;
-      width: 20px;
-      padding: 1px 0;
-      background-color: $color-primary;
-      position: relative;
-      top: 4px;
-      border-radius: 1px;
-      transition: 0.5s ease-out;
+      @include hamburger-menu(top)
     }
   }
 }
