@@ -1,0 +1,202 @@
+.benefits {
+ background-color: $color-light-grey;
+  .benefits-container {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      max-width:  1124px;
+      margin: 0 auto;
+    }
+
+    .benefit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 2rem 2rem;
+      background-color: $color-white;
+      border-radius: 5px;
+      border: 1px solid #E8E9ED;
+      padding: 3rem 1rem;
+
+      &:first-child {
+
+        @include desktop {
+          flex-direction: row-reverse;
+        }
+
+        .benefit-img-container::after {
+          content: '';
+          width: 100px;
+          height: 100px;
+          background-color: $color-reddish;
+          border-radius: 41px;
+          position: absolute;
+          top: 0;
+          right: 100px;
+          transform: rotate(45deg);
+
+          @include desktop {
+            width: 180px;
+            height: 180px;
+          }
+        }
+
+        .benefit-img {
+          height: 110px;
+          z-index: 2;
+          margin: 30px 120px;
+
+          @include desktop {
+            width: 386px;
+            height: 219px;
+          }
+        }
+      }
+
+
+      &:nth-child(2) {
+
+        @include desktop {
+          flex-direction: row;
+        }
+
+        .benefit-img-container::after {
+          content: '';
+          width: 130px;
+          height: 130px;
+          background-color: $color-primary;
+          border-radius: 50%;
+          position: absolute;
+          right: 120px;
+
+          @include desktop {
+            width: 320px;
+            height: 320px;
+            right: 160px;
+          }
+        }
+
+        &:nth-child(2) .benefit-img {
+          height: 135px;
+          z-index: 2;
+          margin: 15px 70px;
+
+          @include desktop {
+            width: 426px;
+            height: 321px;
+            z-index: 2;
+            margin: 15px 70px;
+          }
+        }
+      }
+
+      &:last-child {
+        flex-direction: column-reverse;
+        padding: 3rem 0 0 0;
+
+        @include desktop {
+          flex-direction: row-reverse;
+          gap: 2.5rem;
+          border: none;
+          background-color: $color-light-grey;
+          padding: 0;
+        }
+
+        .benefit-description {
+          padding: 0 1rem;
+
+          @include desktop {
+            display: flex;
+            background-color: $color-white;
+            //height: 100%;
+            flex: 4;
+            margin: 0;
+            padding: 4rem 3rem;
+            border-radius: 5px;
+            border: 1px solid #E8E9ED;
+          }
+        }
+
+
+        .benefit-img-container {
+          background-color: $color-green;
+          width: 100%;
+          //height: 195px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 5px;
+
+          @include desktop {
+            flex: 3;
+            //height: 100%;
+            //align-self: stretch;
+            //height: 370px;
+            align-self: stretch;
+          }
+
+          .benefit-img {
+            height: 195px;
+            padding-top: 2rem;
+            z-index: 2;
+
+            @include desktop {
+              width: 296px;
+              height: 208px;
+            }
+          }
+        }
+
+
+      }
+
+
+
+      .benefit-img-container {
+        display: flex;
+        position: relative;
+
+      }
+      .benefit-description {
+        display: flex;
+        flex-direction: column;
+        margin: 0 2rem;
+        .benefit-text {
+          max-width: 22rem;
+          font-family: $font-raleway;
+          font-size: 36px;
+        }
+        .benefit-p {
+          font-family: $font-openSans;
+          font-size: 1rem;
+          line-height: 22px;
+          padding-top: 2rem;
+
+          @include desktop {
+            max-width: 25rem;
+          }
+        }
+        &::after {
+          content: "";
+          max-width: 22rem;
+          height: 4px;
+          margin: 20px 0;
+        }
+      }
+      @include desktop {
+        &:first-child .benefit-description::after {
+          background-color: $color-reddish;
+        }
+
+        &:nth-child(2) .benefit-description::after {
+          background-color: $color-primary;
+        }
+
+        &:last-child .benefit-description::after {
+          background-color: $color-green;
+        }
+      }
+    }
+  }
+}

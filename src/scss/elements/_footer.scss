@@ -1,0 +1,35 @@
+.footer {
+  width: 100%;
+  box-shadow: 0px -5px 40px #00000029;
+
+  .container {
+    padding: 1.5rem;
+    max-width: 1324px;
+    margin: 0 auto;
+
+  }
+  .footer-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .footer-logo {
+      a {
+        font-size: 1.6rem;
+        font-family: $font-raleway;
+        font-weight: lighter;
+        color: $color-primary;
+      }
+      p {
+        font-family: $font-openSans;
+        font-size: 0.8rem;
+        color: #A5A5A5;
+      }
+    }
+
+    .footer-social-media {
+     display: flex;
+      gap: 1.2rem
+    }
+
+  }
+}

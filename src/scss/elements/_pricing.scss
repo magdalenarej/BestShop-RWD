@@ -1,0 +1,178 @@
+.pricing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+
+  .pricing-main-title {
+    font-family: $font-raleway;
+    font-size: 2.25rem;
+    padding: 1rem;
+
+    @include desktop {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .pricing-boxes-container {
+    max-width: 25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.4rem;
+
+    @include desktop {
+      flex-direction: row;
+      justify-content: center;
+      gap: 2.5rem
+    }
+  }
+
+  .pricing-box {
+    border: 1px solid black;
+    border-radius: 18px;
+    display: flex;
+    position: relative;
+    padding: 1rem 1rem 2.5rem 1rem;
+    min-width: 20rem;
+
+    @include desktop {
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 2rem 3rem 2rem;
+    }
+
+    .pricing-price-container{
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0.6rem;
+
+      @include desktop {
+        padding-bottom: 2rem;
+      }
+
+      .pricing-title {
+        font-family: $font-raleway;
+        font-size: 1.25rem;
+        font-weight: bold;
+        padding: 0.5rem;
+
+      }
+
+      .pricing-price {
+        font-family: $font-openSans;
+        font-size: 2.87rem;
+        font-weight: lighter;
+
+      }
+    }
+
+    .pricing-p-container {
+      flex: 1;
+
+      .pricing-p {
+        font-family: $font-openSans;
+        font-size: 0.87rem;
+        padding: 0.6rem ;
+        white-space: nowrap;
+
+        &:before {
+          content: url("../../assets/Ckechmark-1.svg");
+          width: 11px;
+          height: 11px;
+          margin: 5px;
+        }
+
+      }
+
+      .logo-close::before {
+        content: url("../../assets/Close.svg");
+        width: 11px;
+        height: 11px;
+        margin: 5px;
+      }
+
+    }
+
+    .pricing-btn {
+      position: absolute;
+      bottom: 0;
+      right: 50%;
+      transform: translate(50%, 50%);
+      padding: 1rem 3.5rem;
+      background-color: black;
+      color: $color-white;
+      border-radius: 23px;
+      font-family: $font-openSans;
+      font-weight: bold;
+      font-size: 0.8rem;
+    }
+  }
+
+  .pricing-basic {
+    border-color: $color-reddish;
+
+    .pricing-price {
+      color: $color-reddish;
+    }
+
+    .pricing-btn {
+      background-color: $color-reddish;
+    }
+
+  }
+
+  .pricing-professional {
+    border-color: $color-primary;
+    box-shadow: 5px 10px 27px $color-primary-shadow;
+    padding: 2.5rem 2rem 3.5rem 2rem;
+
+    @include desktop {
+      padding: 2.5rem 2rem 3rem 2rem;
+    }
+
+
+    .pricing-price {
+      color: $color-primary;
+      &::after {
+        content: "Limited offer";
+        display: block;
+        font-size: 0.75rem;
+        font-family: $font-raleway;
+        font-weight: bold;
+        color: black;
+      }
+    }
+
+    .pricing-btn {
+      background-color: $color-primary;
+      box-shadow: 5px 10px 27px $color-primary-shadow;
+
+    }
+
+  }
+
+  .pricing-premium {
+    border-color: $color-green;
+
+    .pricing-price {
+      color: $color-green;
+      &::after {
+        content: "Limited offer";
+        display: block;
+        font-size: 0.75rem;
+        font-family: $font-raleway;
+        font-weight: bold;
+        color: black;
+      }
+    }
+
+    .pricing-btn {
+      background-color: $color-green;
+    }
+
+  }
+}

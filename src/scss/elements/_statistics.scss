@@ -1,0 +1,86 @@
+.statistics {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2.5rem 0 2.5rem;
+
+  @include tablet {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .statistic-slogan {
+    font-family: $font-raleway;
+    font-size: 30px;
+    font-weight: normal;
+    text-align: center;
+    padding: 0 2rem;
+  }
+
+  .statistics-infos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 120px;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    .statistic-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 10rem;
+
+      &::before {
+        content: "";
+        width: 63px;
+        height: 63px;
+        border-radius: 50%;
+        z-index: -1;
+        position: relative;
+        top: 60px
+      }
+
+      &:first-child::before {
+        background-color: $color-reddish;
+      }
+
+      &:nth-child(2)::before {
+        background-color: $color-primary;
+      }
+
+      &:last-child::before {
+        background-color: $color-green;
+      }
+
+      .statistic-icon {
+        height: 52px;
+        width: 52px;
+        margin: 0 35px;
+        align-self: flex-end;
+
+      }
+
+      .statistic-num {
+        font-family: $font-raleway;
+        font-size: 20px;
+        font-weight: bolder;
+        margin-top: 22px;
+        letter-spacing: 6px;
+
+      }
+
+      .statistic-p {
+        font-family: $font-raleway;
+        color: $color-grey;
+        font-size: 17px;
+        padding: 20px;
+        text-align: center;
+      }
+    }
+  }
+}
