@@ -9,25 +9,21 @@
 
   }
   .footer-flex {
-    display: flex;
+    @extend %flex-align-center;
     justify-content: space-between;
-    align-items: center;
+
     .footer-logo {
       a {
-        font-size: 1.6rem;
-        font-family: $font-raleway;
-        font-weight: lighter;
-        color: $color-primary;
+        @include font-set($font-raleway, 1.6rem, lighter, $color-primary);
       }
+
       p {
-        font-family: $font-openSans;
-        font-size: 0.8rem;
-        color: #A5A5A5;
+        @include font-set($font-openSans, 0.8rem, normal, #A5A5A5);
       }
     }
 
     .footer-social-media {
-     display: flex;
+      display: flex;
       gap: 1.2rem
     }
 

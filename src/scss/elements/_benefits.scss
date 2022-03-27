@@ -1,8 +1,8 @@
 .benefits {
  background-color: $color-light-grey;
+
   .benefits-container {
-    display: flex;
-    flex-direction: column;
+    @extend %flex-column;
 
     @include tablet {
       max-width:  1124px;
@@ -10,9 +10,8 @@
     }
 
     .benefit {
-      display: flex;
+      @extend %flex-align-center;
       flex-direction: column;
-      align-items: center;
       margin: 2rem 2rem;
       background-color: $color-white;
       border-radius: 5px;
@@ -26,12 +25,7 @@
         }
 
         .benefit-img-container::after {
-          content: '';
-          width: 100px;
-          height: 100px;
-          background-color: $color-reddish;
-          border-radius: 41px;
-          position: absolute;
+          @include img-container(100px, 100px, $color-reddish, 41px);
           top: 0;
           right: 100px;
           transform: rotate(45deg);
@@ -62,12 +56,7 @@
         }
 
         .benefit-img-container::after {
-          content: '';
-          width: 130px;
-          height: 130px;
-          background-color: $color-primary;
-          border-radius: 50%;
-          position: absolute;
+          @include img-container(130px, 130px, $color-primary, 50%);
           right: 120px;
 
           @include desktop {
@@ -109,7 +98,6 @@
           @include desktop {
             display: flex;
             background-color: $color-white;
-            //height: 100%;
             flex: 4;
             margin: 0;
             padding: 4rem 3rem;
@@ -120,19 +108,14 @@
 
 
         .benefit-img-container {
+          @extend %flex-align-center;
+          justify-content: center;
           background-color: $color-green;
           width: 100%;
-          //height: 195px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
           border-radius: 5px;
 
           @include desktop {
             flex: 3;
-            //height: 100%;
-            //align-self: stretch;
-            //height: 370px;
             align-self: stretch;
           }
 
@@ -147,10 +130,7 @@
             }
           }
         }
-
-
       }
-
 
 
       .benefit-img-container {
@@ -159,17 +139,14 @@
 
       }
       .benefit-description {
-        display: flex;
-        flex-direction: column;
+        @extend %flex-column;
         margin: 0 2rem;
         .benefit-text {
+          @include font-set($font-raleway, 2.25rem, normal, black);
           max-width: 22rem;
-          font-family: $font-raleway;
-          font-size: 36px;
         }
         .benefit-p {
-          font-family: $font-openSans;
-          font-size: 1rem;
+          @include font-set($font-openSans, 1rem, normal, black);
           line-height: 22px;
           padding-top: 2rem;
 

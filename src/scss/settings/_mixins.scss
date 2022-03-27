@@ -10,16 +10,16 @@
   }
 }
 
-@mixin hamburger-menu ($position) {
+@mixin hamburger-menu {
   content: '';
   display: block;
   width: 20px;
   padding: 1px 0;
   background-color: $color-primary;
   position: relative;
-  $position: 4px;
   border-radius: 1px;
   transition: 0.5s ease-out;
+  @content;
 }
 
 @mixin font-set ($font-family, $font-size, $font-weight, $color) {
@@ -27,4 +27,41 @@
   font-size: $font-size;
   font-weight: $font-weight;
   color: $color;
+}
+
+@mixin statistic-el($color) {
+  content: "";
+  width: 63px;
+  height: 63px;
+  border-radius: 50%;
+  z-index: -1;
+  position: relative;
+  top: 60px;
+  background-color: $color;
+}
+
+@mixin img-container($width, $height, $bg-color, $border-radius) {
+  content: '';
+  position: absolute;
+  width: $width;
+  height: $height;
+  background-color: $bg-color;
+  border-radius: $border-radius;
+  @content
+}
+
+@mixin pricing-el($src) {
+  content: url($src);
+  width: 11px;
+  height: 11px;
+  margin: 5px;
+}
+
+@mixin limited-offer-el {
+  content: "Limited offer";
+  display: block;
+  font-size: 0.75rem;
+  font-family: $font-raleway;
+  font-weight: bold;
+  color: black;
 }

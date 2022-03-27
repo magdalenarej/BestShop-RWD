@@ -18,6 +18,16 @@ h1, h2, h3, h4 {
   font-weight: normal;
 }
 
+.footer .footer-flex, .contact .contact-info .contact-details .contact-phone, .contact .contact-info .contact-details .contact-email, .pricing .pricing-boxes-container, .pricing, .benefits .benefits-container .benefit:last-child .benefit-img-container, .benefits .benefits-container .benefit, .statistics .statistics-infos .statistic-info, .statistics .statistics-infos, .statistics, .opening, .header-menu-icon .navicon, .header-menu-icon, .header-menu ul .menu-item a, .header .header-container {
+  display: flex;
+  align-items: center;
+}
+
+.contact .contact-form .contact-form-label, .contact .contact-form, .contact .contact-info .contact-details, .contact .contact-info, .contact, .pricing .pricing-box .pricing-price-container, .benefits .benefits-container .benefit .benefit-description, .benefits .benefits-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .header {
   height: 4.3rem;
   width: 100%;
@@ -32,14 +42,12 @@ h1, h2, h3, h4 {
   }
 }
 .header .header-container {
-  display: flex;
   justify-content: space-between;
-  align-items: center;
+  position: relative;
   height: 100%;
   width: 100%;
   padding: 0 1.6rem;
   box-shadow: 0 3px 6px #00000029;
-  position: relative;
 }
 @media only screen and (min-width: 768px) {
   .header .header-container {
@@ -55,12 +63,16 @@ h1, h2, h3, h4 {
 }
 .header .header-container .header-logo {
   font-family: "Raleway", sans-serif;
-  color: #08A6E4;
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: lighter;
+  color: #08A6E4;
 }
 
 .header-menu {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: #A5A5A5;
   position: absolute;
   top: 4.3rem;
   left: 0;
@@ -71,10 +83,6 @@ h1, h2, h3, h4 {
   box-shadow: 0 3px 6px #00000029;
   transition: padding-bottom 0.5s;
   z-index: -1;
-  font-family: "Open Sans", sans-serif;
-  color: #A5A5A5;
-  font-size: 11px;
-  font-weight: bold;
 }
 @media only screen and (min-width: 768px) {
   .header-menu {
@@ -82,10 +90,10 @@ h1, h2, h3, h4 {
     align-items: center;
     opacity: 1;
     position: static;
-    box-shadow: none;
     width: auto;
     height: 100%;
     z-index: 0;
+    box-shadow: none;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -112,8 +120,6 @@ h1, h2, h3, h4 {
 .header-menu ul .menu-item a {
   color: #A5A5A5;
   height: 100%;
-  display: flex;
-  align-items: center;
   transition: color 0.3s ease-out;
 }
 .header-menu ul .menu-item a:hover {
@@ -143,7 +149,6 @@ h1, h2, h3, h4 {
 .header-menu-icon {
   width: 1.5rem;
   height: 1.5rem;
-  display: flex;
 }
 @media only screen and (min-width: 768px) {
   .header-menu-icon {
@@ -151,13 +156,11 @@ h1, h2, h3, h4 {
   }
 }
 .header-menu-icon .navicon {
+  flex-direction: column;
+  justify-content: center;
   width: 20px;
   height: 2px;
   background-color: #08A6E4;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-self: center;
   border-radius: 1px;
   transition: 0.5s ease-out;
 }
@@ -168,9 +171,9 @@ h1, h2, h3, h4 {
   padding: 1px 0;
   background-color: #08A6E4;
   position: relative;
-  bottom: 4px;
   border-radius: 1px;
   transition: 0.5s ease-out;
+  bottom: 4px;
 }
 .header-menu-icon .navicon::after {
   content: "";
@@ -179,9 +182,9 @@ h1, h2, h3, h4 {
   padding: 1px 0;
   background-color: #08A6E4;
   position: relative;
-  top: 4px;
   border-radius: 1px;
   transition: 0.5s ease-out;
+  top: 4px;
 }
 
 .header-menu-btn:checked ~ .header-menu-icon > .navicon {
@@ -198,9 +201,7 @@ h1, h2, h3, h4 {
 }
 
 .opening {
-  display: flex;
   flex-direction: column;
-  align-items: center;
   margin-top: 6.25rem;
   padding: 0 2rem;
   overflow: hidden;
@@ -209,25 +210,28 @@ h1, h2, h3, h4 {
   font-family: "Raleway", sans-serif;
   font-size: 2.2rem;
   font-weight: lighter;
+  color: black;
   margin-bottom: 20px;
 }
 .opening .opening-p {
   font-family: "Open Sans", sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
+  font-weight: normal;
+  color: black;
   text-align: center;
   margin-bottom: 2rem;
   padding: 0 4.5rem;
 }
 .opening .opening-btn {
-  width: 100%;
-  border: none;
-  background-color: #08A6E4;
-  border-radius: 40px;
-  padding: 1.3rem 0;
-  color: #FFFFFF;
+  font-family: "Open Sans", sans-serif;
   font-size: 1rem;
   font-weight: bold;
-  font-family: "Open Sans", sans-serif;
+  color: #FFFFFF;
+  width: 100%;
+  padding: 1.3rem 0;
+  background-color: #08A6E4;
+  border: none;
+  border-radius: 40px;
   text-align: center;
 }
 .opening .opening-btn:hover {
@@ -250,9 +254,7 @@ h1, h2, h3, h4 {
 }
 
 .statistics {
-  display: flex;
   flex-direction: column;
-  align-items: center;
   padding: 4rem 2.5rem 0 2.5rem;
 }
 @media only screen and (min-width: 768px) {
@@ -263,31 +265,29 @@ h1, h2, h3, h4 {
 }
 .statistics .statistic-slogan {
   font-family: "Raleway", sans-serif;
-  font-size: 30px;
+  font-size: 1.9rem;
   font-weight: normal;
+  color: black;
   text-align: center;
   padding: 0 2rem;
 }
 .statistics .statistics-infos {
-  display: flex;
   flex-direction: column;
-  align-items: center;
   width: 100%;
   margin-bottom: 120px;
 }
 @media only screen and (min-width: 768px) {
   .statistics .statistics-infos {
     flex-direction: row;
-    justify-content: space-around;
+    align-items: baseline;
+    justify-content: space-between;
   }
 }
 .statistics .statistics-infos .statistic-info {
-  display: flex;
   flex-direction: column;
-  align-items: center;
   width: 10rem;
 }
-.statistics .statistics-infos .statistic-info::before {
+.statistics .statistics-infos .statistic-info:first-child::before {
   content: "";
   width: 63px;
   height: 63px;
@@ -295,14 +295,26 @@ h1, h2, h3, h4 {
   z-index: -1;
   position: relative;
   top: 60px;
-}
-.statistics .statistics-infos .statistic-info:first-child::before {
   background-color: #FB3B64;
 }
 .statistics .statistics-infos .statistic-info:nth-child(2)::before {
+  content: "";
+  width: 63px;
+  height: 63px;
+  border-radius: 50%;
+  z-index: -1;
+  position: relative;
+  top: 60px;
   background-color: #08A6E4;
 }
 .statistics .statistics-infos .statistic-info:last-child::before {
+  content: "";
+  width: 63px;
+  height: 63px;
+  border-radius: 50%;
+  z-index: -1;
+  position: relative;
+  top: 60px;
   background-color: #55DFB4;
 }
 .statistics .statistics-infos .statistic-info .statistic-icon {
@@ -313,13 +325,16 @@ h1, h2, h3, h4 {
 }
 .statistics .statistics-infos .statistic-info .statistic-num {
   font-family: "Raleway", sans-serif;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: bolder;
+  color: black;
   margin-top: 22px;
   letter-spacing: 6px;
 }
 .statistics .statistics-infos .statistic-info .statistic-p {
   font-family: "Raleway", sans-serif;
+  font-size: 1.1rem;
+  font-weight: normal;
   color: #A5A5A5;
   font-size: 17px;
   padding: 20px;
@@ -329,10 +344,6 @@ h1, h2, h3, h4 {
 .benefits {
   background-color: #F7F7F7;
 }
-.benefits .benefits-container {
-  display: flex;
-  flex-direction: column;
-}
 @media only screen and (min-width: 768px) {
   .benefits .benefits-container {
     max-width: 1124px;
@@ -340,9 +351,7 @@ h1, h2, h3, h4 {
   }
 }
 .benefits .benefits-container .benefit {
-  display: flex;
   flex-direction: column;
-  align-items: center;
   margin: 2rem 2rem;
   background-color: #FFFFFF;
   border-radius: 5px;
@@ -356,11 +365,11 @@ h1, h2, h3, h4 {
 }
 .benefits .benefits-container .benefit:first-child .benefit-img-container::after {
   content: "";
+  position: absolute;
   width: 100px;
   height: 100px;
   background-color: #FB3B64;
   border-radius: 41px;
-  position: absolute;
   top: 0;
   right: 100px;
   transform: rotate(45deg);
@@ -389,11 +398,11 @@ h1, h2, h3, h4 {
 }
 .benefits .benefits-container .benefit:nth-child(2) .benefit-img-container::after {
   content: "";
+  position: absolute;
   width: 130px;
   height: 130px;
   background-color: #08A6E4;
   border-radius: 50%;
-  position: absolute;
   right: 120px;
 }
 @media only screen and (min-width: 1024px) {
@@ -444,11 +453,9 @@ h1, h2, h3, h4 {
   }
 }
 .benefits .benefits-container .benefit:last-child .benefit-img-container {
+  justify-content: center;
   background-color: #55DFB4;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border-radius: 5px;
 }
 @media only screen and (min-width: 1024px) {
@@ -473,18 +480,20 @@ h1, h2, h3, h4 {
   position: relative;
 }
 .benefits .benefits-container .benefit .benefit-description {
-  display: flex;
-  flex-direction: column;
   margin: 0 2rem;
 }
 .benefits .benefits-container .benefit .benefit-description .benefit-text {
-  max-width: 22rem;
   font-family: "Raleway", sans-serif;
-  font-size: 36px;
+  font-size: 2.25rem;
+  font-weight: normal;
+  color: black;
+  max-width: 22rem;
 }
 .benefits .benefits-container .benefit .benefit-description .benefit-p {
   font-family: "Open Sans", sans-serif;
   font-size: 1rem;
+  font-weight: normal;
+  color: black;
   line-height: 22px;
   padding-top: 2rem;
 }
@@ -512,14 +521,14 @@ h1, h2, h3, h4 {
 }
 
 .pricing {
-  display: flex;
   flex-direction: column;
-  align-items: center;
   padding: 3rem;
 }
 .pricing .pricing-main-title {
   font-family: "Raleway", sans-serif;
   font-size: 2.25rem;
+  font-weight: normal;
+  color: black;
   padding: 1rem;
 }
 @media only screen and (min-width: 1024px) {
@@ -529,9 +538,7 @@ h1, h2, h3, h4 {
 }
 .pricing .pricing-boxes-container {
   max-width: 25rem;
-  display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 3.4rem;
 }
 @media only screen and (min-width: 1024px) {
@@ -542,12 +549,12 @@ h1, h2, h3, h4 {
   }
 }
 .pricing .pricing-box {
-  border: 1px solid black;
-  border-radius: 18px;
   display: flex;
   position: relative;
-  padding: 1rem 1rem 2.5rem 1rem;
   min-width: 20rem;
+  padding: 1rem 1rem 2.5rem 1rem;
+  border: 1px solid black;
+  border-radius: 18px;
 }
 @media only screen and (min-width: 1024px) {
   .pricing .pricing-box {
@@ -558,8 +565,6 @@ h1, h2, h3, h4 {
 }
 .pricing .pricing-box .pricing-price-container {
   flex: 1;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 0.6rem;
@@ -573,6 +578,7 @@ h1, h2, h3, h4 {
   font-family: "Raleway", sans-serif;
   font-size: 1.25rem;
   font-weight: bold;
+  color: black;
   padding: 0.5rem;
 }
 .pricing .pricing-box .pricing-price-container .pricing-price {
@@ -586,6 +592,8 @@ h1, h2, h3, h4 {
 .pricing .pricing-box .pricing-p-container .pricing-p {
   font-family: "Open Sans", sans-serif;
   font-size: 0.87rem;
+  font-weight: normal;
+  color: black;
   padding: 0.6rem;
   white-space: nowrap;
 }
@@ -602,17 +610,17 @@ h1, h2, h3, h4 {
   margin: 5px;
 }
 .pricing .pricing-box .pricing-btn {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #FFFFFF;
   position: absolute;
   bottom: 0;
   right: 50%;
   transform: translate(50%, 50%);
   padding: 1rem 3.5rem;
   background-color: black;
-  color: #FFFFFF;
   border-radius: 23px;
-  font-family: "Open Sans", sans-serif;
-  font-weight: bold;
-  font-size: 0.8rem;
   transition: font-size 0.5s ease-out;
 }
 .pricing .pricing-box .pricing-btn:hover {
@@ -673,8 +681,6 @@ h1, h2, h3, h4 {
 
 .contact {
   padding: 2rem;
-  display: flex;
-  flex-direction: column;
 }
 @media only screen and (min-width: 1024px) {
   .contact {
@@ -685,10 +691,6 @@ h1, h2, h3, h4 {
     padding: 2rem 3.5rem;
   }
 }
-.contact .contact-info {
-  display: flex;
-  flex-direction: column;
-}
 @media only screen and (min-width: 1024px) {
   .contact .contact-info {
     flex: 1;
@@ -697,24 +699,22 @@ h1, h2, h3, h4 {
 .contact .contact-info h2 {
   font-family: "Raleway", sans-serif;
   font-size: 2.5rem;
+  font-weight: normal;
+  color: black;
   padding: 1rem 0;
 }
 .contact .contact-info p {
   font-family: "Open Sans", sans-serif;
   font-size: 1rem;
+  font-weight: normal;
+  color: black;
   padding-bottom: 0.75rem;
-}
-.contact .contact-info .contact-details {
-  display: flex;
-  flex-direction: column;
 }
 .contact .contact-info .contact-details .contact-email {
   font-family: "Open Sans", sans-serif;
   font-size: 1rem;
   font-weight: 600;
   color: #A5A5A5;
-  display: flex;
-  align-items: center;
 }
 .contact .contact-info .contact-details .contact-email::before {
   content: url("../../assets/Mail Icon.svg");
@@ -726,17 +726,11 @@ h1, h2, h3, h4 {
   font-size: 1rem;
   font-weight: 600;
   color: #A5A5A5;
-  display: flex;
-  align-items: center;
 }
 .contact .contact-info .contact-details .contact-phone::before {
   content: url("../../assets/Phone Icon.svg");
   display: block;
   margin-right: 0.5rem;
-}
-.contact .contact-form {
-  display: flex;
-  flex-direction: column;
 }
 @media only screen and (min-width: 1024px) {
   .contact .contact-form {
@@ -748,8 +742,6 @@ h1, h2, h3, h4 {
   font-size: 0.7rem;
   font-weight: bold;
   color: #08A6E4;
-  display: flex;
-  flex-direction: column;
 }
 .contact .contact-form .contact-form-label input {
   border: none;
@@ -763,6 +755,7 @@ h1, h2, h3, h4 {
   justify-content: space-between;
   font-family: "Open Sans", sans-serif;
   font-size: 0.75rem;
+  font-weight: normal;
   color: #707070;
 }
 .contact .contact-form .contact-form-checkbox .checkbox {
@@ -784,15 +777,15 @@ h1, h2, h3, h4 {
   background-repeat: no-repeat;
 }
 .contact .contact-form .contact-form-btn {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.3rem;
+  font-weight: bolf;
+  color: white;
   padding: 1.25rem 6rem;
   border-radius: 35px;
   border: none;
   background-color: #08A6E4;
   align-self: flex-end;
-  color: #FFFFFF;
-  font-family: "Open Sans", sans-serif;
-  font-weight: bold;
-  font-size: 1.3rem;
   margin: 2rem 0;
 }
 .contact .contact-form .contact-form-btn:hover {
@@ -810,19 +803,18 @@ h1, h2, h3, h4 {
   margin: 0 auto;
 }
 .footer .footer-flex {
-  display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 .footer .footer-flex .footer-logo a {
-  font-size: 1.6rem;
   font-family: "Raleway", sans-serif;
+  font-size: 1.6rem;
   font-weight: lighter;
   color: #08A6E4;
 }
 .footer .footer-flex .footer-logo p {
   font-family: "Open Sans", sans-serif;
   font-size: 0.8rem;
+  font-weight: normal;
   color: #A5A5A5;
 }
 .footer .footer-flex .footer-social-media {

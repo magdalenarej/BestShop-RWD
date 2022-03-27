@@ -1,17 +1,19 @@
+@import "../settings/mixins";
+
 .opening {
-  @extend flex-align-center;
+  @extend %flex-align-center;
   flex-direction: column;
   margin-top: 6.25rem;
   padding: 0 2rem;
   overflow: hidden;
 
   .opening-header{
-    @include font-set($font-raleway, 2.2rem, lighter);
+    @include font-set($font-raleway, 2.2rem, lighter, black);
     margin-bottom: 20px;
   }
 
   .opening-p {
-    @include font-set($font-openSans, 1rem);
+    @include font-set($font-openSans, 1rem, normal, black);
     text-align: center;
     margin-bottom: 2rem;
     padding: 0 4.5rem;

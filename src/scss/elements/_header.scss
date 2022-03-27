@@ -13,11 +13,11 @@
   .header-container {
     @extend %flex-align-center;
     justify-content: space-between;
+    position: relative;
     height: 100%;
     width: 100%;
     padding: 0 1.6rem;
     box-shadow: 0 3px 6px #00000029;
-    position: relative;
 
     @include tablet {
       box-shadow: none;
@@ -52,7 +52,8 @@
   z-index: -1;
 
   @include tablet {
-    @extend %flex-align-center;
+    display: flex;
+    align-items: center;
     opacity: 1;
     position: static;
     width: auto;
@@ -63,7 +64,8 @@
 
   ul {
     @include tablet {
-      @extend %flex-align-center;
+      display: flex;
+      align-items: center;
       height: 100%;
     }
 
@@ -117,7 +119,7 @@
 }
 
 .header-menu-icon {
-  display: flex;
+  @extend %flex-align-center;
   width: 1.5rem;
   height: 1.5rem;
   @include tablet {
@@ -135,11 +137,13 @@
     transition: 0.5s ease-out;
 
     &::before {
-      @include hamburger-menu(bottom)
+      @include hamburger-menu;
+      bottom: 4px;
     }
 
     &::after {
-      @include hamburger-menu(top)
+      @include hamburger-menu;
+      top: 4px;
     }
   }
 }

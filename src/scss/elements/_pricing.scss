@@ -1,12 +1,10 @@
 .pricing {
-  display: flex;
+  @extend %flex-align-center;
   flex-direction: column;
-  align-items: center;
   padding: 3rem;
 
   .pricing-main-title {
-    font-family: $font-raleway;
-    font-size: 2.25rem;
+    @include font-set($font-raleway, 2.25rem, normal, black);
     padding: 1rem;
 
     @include desktop {
@@ -15,10 +13,9 @@
   }
 
   .pricing-boxes-container {
+    @extend %flex-align-center;
     max-width: 25rem;
-    display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 3.4rem;
 
     @include desktop {
@@ -29,12 +26,12 @@
   }
 
   .pricing-box {
-    border: 1px solid black;
-    border-radius: 18px;
     display: flex;
     position: relative;
-    padding: 1rem 1rem 2.5rem 1rem;
     min-width: 20rem;
+    padding: 1rem 1rem 2.5rem 1rem;
+    border: 1px solid black;
+    border-radius: 18px;
 
     @include desktop {
       flex-direction: column;
@@ -43,9 +40,8 @@
     }
 
     .pricing-price-container{
+      @extend %flex-column;
       flex: 1;
-      display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       padding: 0.6rem;
@@ -55,18 +51,14 @@
       }
 
       .pricing-title {
-        font-family: $font-raleway;
-        font-size: 1.25rem;
-        font-weight: bold;
+        @include font-set($font-raleway, 1.25rem, bold, black);
         padding: 0.5rem;
-
       }
 
       .pricing-price {
         font-family: $font-openSans;
         font-size: 2.87rem;
         font-weight: lighter;
-
       }
     }
 
@@ -74,41 +66,31 @@
       flex: 1;
 
       .pricing-p {
-        font-family: $font-openSans;
-        font-size: 0.87rem;
+        @include font-set($font-openSans, 0.87rem, normal, black);
         padding: 0.6rem ;
         white-space: nowrap;
 
         &:before {
-          content: url("../../assets/Ckechmark-1.svg");
-          width: 11px;
-          height: 11px;
-          margin: 5px;
+          @include pricing-el("../../assets/Ckechmark-1.svg");
         }
 
       }
 
       .logo-close::before {
-        content: url("../../assets/Close.svg");
-        width: 11px;
-        height: 11px;
-        margin: 5px;
+        @include pricing-el("../../assets/Close.svg");
       }
 
     }
 
     .pricing-btn {
+      @include font-set($font-openSans, 0.8rem, bold, $color-white);
       position: absolute;
       bottom: 0;
       right: 50%;
       transform: translate(50%, 50%);
       padding: 1rem 3.5rem;
       background-color: black;
-      color: $color-white;
       border-radius: 23px;
-      font-family: $font-openSans;
-      font-weight: bold;
-      font-size: 0.8rem;
       transition: font-size 0.5s ease-out;
 
       &:hover {
@@ -144,12 +126,7 @@
     .pricing-price {
       color: $color-primary;
       &::after {
-        content: "Limited offer";
-        display: block;
-        font-size: 0.75rem;
-        font-family: $font-raleway;
-        font-weight: bold;
-        color: black;
+        @include limited-offer-el;
       }
     }
 
@@ -167,12 +144,7 @@
     .pricing-price {
       color: $color-green;
       &::after {
-        content: "Limited offer";
-        display: block;
-        font-size: 0.75rem;
-        font-family: $font-raleway;
-        font-weight: bold;
-        color: black;
+        @include limited-offer-el;
       }
     }
 
